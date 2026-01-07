@@ -14,7 +14,13 @@ function aggregateData(transcations){
     }
     result[cat].total += amt;
     result[cat].count  += 1;
-    result[cat].highest += Math.max(result[cat].highest, amt);
-    result[]
+    result[cat].highest = Math.max(result[cat].highest, amt);
+    result[cat].lowest =  Math.min(result[cat].lowest, amt);
   })
+  for(let cat in result){
+    result[cat].average = Number(
+      (result[cat].total/ result[cat].count).toFixed(2)
+    )
+  }
+  return result
 }
