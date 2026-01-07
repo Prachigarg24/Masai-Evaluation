@@ -11,9 +11,12 @@ function PostList({posts, loading,userId}){
     <div>
       <p>Total Posts: {posts.length}</p>
       { posts.map(post => (
-
-        ))
-      }
+<div key={post.id} style={{ border:"1px solid #ccc", margin:"10px"}}>
+  <h3>{post.title}</h3>
+  <p>{post.body}</p>
+  </div>
+        ))}
     </div>
-  )
+  );
 }
+export default PostList;
