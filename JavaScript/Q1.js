@@ -1,3 +1,5 @@
+const fetch = (...args)=> 
+  import("node-fetch").then(({default: fetch}) => fetch(...args));
 async function fetchPostsWithComments() {
   try{
     const [postsRes, commentsRes] = await Promise.all([
@@ -33,3 +35,6 @@ async function fetchPostsWithComments() {
     return [];
   }
 }
+fetchPostsWithComments()
+.then(results => console.log(results))
+.catch(err => console.log(err))
