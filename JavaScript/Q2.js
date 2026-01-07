@@ -19,7 +19,7 @@ function aggregateData(transcations){
   })
   for(let cat in result){
     result[cat].average = Number(
-      (result[cat].total/ result[cat].count).toFixed(2)
+      (result[cat].total / result[cat].count).toFixed(2)
     )
   }
   return result
